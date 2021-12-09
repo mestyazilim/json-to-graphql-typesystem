@@ -1,6 +1,6 @@
 // @see https://github.com/mongodb/specifications/blob/master/source/extended-json.rst
 const BSON_CONVERSIONS = {
-  $oid: "Objectid",
+  //$oid: "Objectid",
   $symbol: "Symbol",
   $numberInt: "Int32",
   $numberLong: "Int64",
