@@ -126,14 +126,14 @@ class JSONToGraphQLTS {
     if (type === "string") return this._isSpecialString(data) || "String";
     if (type === "boolean") return "Boolean";
     if (Number.isFinite(data)) return Number.isInteger(data) ? "Int" : "Float";
-    if (data instanceof Date) return "Date";
+    if (data instanceof Date) return "DateTime";
     return null;
   }
 
   // TODO, add more???
   _isSpecialString(s) {
     if (s.toLowerCase().startsWith("http")) return "Id";
-    if (this.isValidDate(s)) return "Date";
+    //if (this.isValidDate(s)) return "Date";
     if (this.isValidDateTime(s)) return "DateTime";
     return null;
   }
