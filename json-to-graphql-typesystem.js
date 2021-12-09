@@ -34,7 +34,7 @@ class JSONToGraphQLTS {
     this.bson = Object.assign({}, useStandardBson, userBSON);
   }
   isValidDateTime(s){
-    var pattern = new RegExp(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]) (0[0-9]|1[0-9]|2[1-4]):(0[0-9]|[1-5][0-9]):(0[0-9]|[1-5][0-9]))/);
+    var pattern = new RegExp(/([0-9]\d{3}-(0[0-9]|1[0-2])-(0[0-9]|[12]\d|3[01]) (0[0-9]|1[0-9]|2[1-4]):(0[0-9]|[1-5][0-9]):(0[0-9]|[1-5][0-9]))/);
     return pattern.test(s);
   }
   isValidDate(dateString){
