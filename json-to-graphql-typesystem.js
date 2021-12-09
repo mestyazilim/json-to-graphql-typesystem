@@ -133,7 +133,7 @@ class JSONToGraphQLTS {
   // TODO, add more???
   _isSpecialString(s) {
     if (s.toLowerCase().startsWith("http")) return "Id";
-    //if (this.isValidDate(s)) return "Date";
+    if (this.isValidDate(s)) return "Date";
     if (this.isValidDateTime(s)) return "DateTime";
     return null;
   }
