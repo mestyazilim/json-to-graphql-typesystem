@@ -57,7 +57,7 @@ class JSONToGraphQLTS {
 
   r(type, data) {
     type = type.split('_');
-    type = type.map(str=>str.charAt(0).toUpperCase() + str.slice(1)).join("")
+    type = type.map(str=>'Mongo'+str.charAt(0).toUpperCase() + str.slice(1)).join("")
     
     let elements = Object.keys(data).map((key) =>
       this.r1(type, key, data[key])
@@ -82,7 +82,7 @@ class JSONToGraphQLTS {
     if (mongoType) return mongoType;
 
     // unknown nested type
-    let newType = 'String';//type + this.options.nestedDelimiter + field;
+    let newType = type + this.options.nestedDelimiter + field;
     this.all[newType] = this.r(newType, data);
     return newType;
   }
