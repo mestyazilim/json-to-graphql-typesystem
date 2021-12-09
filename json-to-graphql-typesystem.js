@@ -82,8 +82,8 @@ class JSONToGraphQLTS {
     if (mongoType) return mongoType;
 
     // unknown nested type
-    //let newType = type + this.options.nestedDelimiter + field;
-    //this.all[newType] = this.r(newType, data);
+    let newType = 'String';//type + this.options.nestedDelimiter + field;
+    this.all[newType] = this.r(newType, data);
     return newType;
   }
 
