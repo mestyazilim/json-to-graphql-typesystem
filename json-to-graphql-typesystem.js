@@ -56,9 +56,13 @@ class JSONToGraphQLTS {
   }
 
   r(type, data) {
+    type = type.split('_');
+    type = type.map(str=>str.charAt(0).toUpperCase() + str.slice(1)).join("")
+    
     let elements = Object.keys(data).map((key) =>
       this.r1(type, key, data[key])
     );
+   
     elements.push("}");
     elements.unshift("type " + type + " {");
     return elements.join(this.options.eol);
